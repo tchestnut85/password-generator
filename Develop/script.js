@@ -31,9 +31,9 @@ function writePassword() {
 
 
   // make if statements based on user input from confirms, and at least 1 confirm must be true
-  if (textLowConfirm == false && textUpConfirm == false && textNumConfirm == false && textSpecialConfirm == false); {
+  if (textLowConfirm == false && textUpConfirm == false && textNumConfirm == false && textSpecialConfirm == false) {
     window.alert("You need to have at least one type of character in your password!"); 
-  }
+    return; }
   
   if (textLowConfirm ==true) {
     possibleChar += lettersLow
@@ -50,8 +50,8 @@ function writePassword() {
 
   for (var i = 0; i < passwordLength; i++) {
     finalPassword += possibleChar.charAt (Math.floor(Math.random() * possibleChar.length));
-    console.log(finalPassword);
   }
+  console.log(finalPassword);
 
 var passwordText = document.querySelector("#password");
 passwordText.value = finalPassword;

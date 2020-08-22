@@ -1,1 +1,12 @@
-# Password Generator Starter Code
+# Random Password Generator
+
+## About This Application
+
+
+### Screenshot
+
+
+### Languages Used
+
+
+
