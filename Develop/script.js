@@ -28,10 +28,34 @@ function writePassword() {
   var textUpConfirm = window.confirm("Would you like to include uppercase letters?");
   var textNumConfirm = window.confirm("Would you like to include numbers?");
   var textSpecialConfirm = window.confirm("Would you like to include special characters?");
-}
+
 
   // make if statements based on user input from confirms, and at least 1 confirm must be true
+  if (textLowConfirm == false && textUpConfirm == false && textNumConfirm == false && textSpecialConfirm == false); {
+    window.alert("You need to have at least one type of character in your password!"); 
+  }
   
+  if (textLowConfirm ==true) {
+    possibleChar += lettersLow
+  }
+  if (textUpConfirm ==true) {
+    possibleChar += lettersUp
+  }
+  if (textNumConfirm ==true) {
+    possibleChar += numbers
+  }
+  if (textSpecialConfirm ==true) {
+    possibleChar += special
+  }
 
+  for (var i = 0; i < passwordLength; i++) {
+    finalPassword += possibleChar.charAt (Math.floor(Math.random() * possibleChar.length));
+    console.log(finalPassword);
+  }
+
+var passwordText = document.querySelector("#password");
+passwordText.value = finalPassword;
+
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
