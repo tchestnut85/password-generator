@@ -15,8 +15,19 @@ var special = "!#$%&'()*+,-./:;<=>?@[]/^_`{}~";
 
 // Write password to the #password input
 
-function writePassword {
+function writePassword() {
+  var possibleChar = "";
+  var finalPassword = "";
 
+  var passwordLength = window.prompt("How many characters (at least 8) would you like to include in your password?");
+  if (passwordLength <= 7 || passwordLength >= 129) {
+    window.alert("The password must be at least 8 and no more than 128 characters.");
+    return;
+  }
+  var textLowConfirm = window.confirm("Would you like to include lowercase letters?");
+  var textUpConfirm = window.confirm("Would you like to include uppercase letters?");
+  var textNumConfirm = window.confirm("Would you like to include numbers?");
+  var textSpecialConfirm = window.confirm("Would you like to include special characters?");
 }
 
   // make if statements based on user input from confirms, and at least 1 confirm must be true
