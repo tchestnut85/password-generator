@@ -21,7 +21,7 @@ function writePassword() {
 
   var passwordLength = window.prompt("How many characters (at least 8) would you like to include in your password?");
   if (passwordLength <= 7 || passwordLength >= 129) {
-    window.alert("The password must be at least 8 and no more than 128 characters.");
+    window.alert('The password must be at least 8 and no more than 128 characters. Please click the "Generate Password" button again.');
     return;
   }
   var textLowConfirm = window.confirm("Would you like to include lowercase letters?");
@@ -32,7 +32,7 @@ function writePassword() {
 
   // make if statements based on user input from confirms, and at least 1 confirm must be true
   if (textLowConfirm == false && textUpConfirm == false && textNumConfirm == false && textSpecialConfirm == false) {
-    window.alert("You need to have at least one type of character in your password!"); 
+    window.alert('You need to have at least one type of character in your password! Please click the "Generate Password" button again.'); 
     return; }
   
   if (textLowConfirm ==true) {
@@ -51,6 +51,7 @@ function writePassword() {
   for (var i = 0; i < passwordLength; i++) {
     finalPassword += possibleChar.charAt (Math.floor(Math.random() * possibleChar.length));
   }
+  console.log(possibleChar);
   console.log(finalPassword);
 
 var passwordText = document.querySelector("#password");
